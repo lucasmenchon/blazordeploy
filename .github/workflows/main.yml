@@ -24,8 +24,8 @@ jobs:
       run: dotnet publish BlazorApp.Client.csproj -c Release -o release --nologo
     
     # changes the base-tag in index.html from '/' to 'blazordeploy' to match GitHub Pages repository subdirectory
-    - name: Change base-tag in index.html from / to blazordeploy
-      run: sed -i 's/<base href="\/" \/>/<base href="\/blazordeploy\/" \/>/g' release/wwwroot/index.html
+    - name: Change base-tag in index.html from / to BlazorApp.Client
+      run: sed -i 's/<base href="\/" \/>/<base href="\/BlazorApp.Client\/" \/>/g' release/wwwroot/index.html
 
     # changes the base-tag in index.html from '/' to 'blazordeploy' to match GitHub Pages repository subdirectory
     - name: Fix service-worker-assets.js hashes
