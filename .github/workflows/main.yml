@@ -17,7 +17,7 @@
 #                   include-prerelease: true
 
 #             - name: Publish .NET Core Project
-#               run: dotnet publish BlazorApp.Client.csproj -c Release -o release --nologo
+#               run: dotnet publish BlazorApp.csproj -c Release -o release --nologo
 
 #             - name: copy index.html to 404.html
 #               run: cp release/wwwroot/index.html release/wwwroot/404.html
@@ -36,7 +36,7 @@
 
 name: Deploy to GitHub Pages
 
-# Run workflow on every push to the master branch
+Run workflow on every push to the master branch
 on:
   push:
     branches: [ main ]
@@ -60,8 +60,8 @@ jobs:
       run: dotnet publish BlazorApp.csproj -c Release -o release --nologo
     
     # changes the base-tag in index.html from '/' to 'blazordeploy' to match GitHub Pages repository subdirectory
-    - name: Change base-tag in index.html from / to blazordeploy
-      run: sed -i 's/<base href="\/" \/>/<base href="\/blazordeploy\/" \/>/g' release/wwwroot/index.html
+    # - name: Change base-tag in index.html from / to blazordeploy
+    #  run: sed -i 's/<base href="\/" \/>/<base href="\/blazordeploy\/" \/>/g' release/wwwroot/index.html
 
     # changes the base-tag in index.html from '/' to 'blazordeploy' to match GitHub Pages repository subdirectory
     - name: Fix service-worker-assets.js hashes
