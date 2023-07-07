@@ -32,7 +32,7 @@ jobs:
                   BRANCH: gh-pages
                   FOLDER: release/wwwroot
                   
-Based on https://swimburger.net/blog/dotnet/how-to-deploy-aspnet-blazor-webassembly-to-github-pages
+#Based on https://swimburger.net/blog/dotnet/how-to-deploy-aspnet-blazor-webassembly-to-github-pages
 
 # name: Deploy to GitHub Pages
 
